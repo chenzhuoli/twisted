@@ -58,7 +58,7 @@ class TestResource(resource.Resource):
                 if pindex != -1:
                     key, value = param.split('=')
                     params_dict[key] = value
-        print params_dict
+        print(params_dict)
         return params_dict
 
     def send_message(self, phone_str, msgg):
@@ -66,13 +66,13 @@ class TestResource(resource.Resource):
         for phone in phone_list:
             cmd = "GET -edst 5 'http://115.182.51.124:7070/thirdPartner/letvqxtmt?corpID=800070&srcAddr=1069032901305724&destAddr=%s&msg=%s'" %(phone,msgg)
             os.system(cmd)
-            print "send message done"
+            print("send message done")
 
     def add_callback(self, callback_function, json_result):
         return "%s(%s)" %(callback_function, json_result)
 
     def print_log(self, message, consume_time):
-        print "message:%s\ttime:%d" % (message, consume_time)
+        print("message:%s\ttime:%d" % (message, consume_time))
 
 if __name__ == "__main__":
     if len(sys.argv) < 5:
