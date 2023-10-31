@@ -1,2 +1,2 @@
 #!/bin/bash
-./message_service.py
+python message_service.py
