@@ -19,10 +19,10 @@ from twisted.web import server, resource
 from twisted.internet import reactor
 from twisted.python import log
 from twisted.python import logfile
+import importlib
 
+importlib.reload(sys)
 sys.path.insert(0, '.')
-reload(sys)
-sys.setdefaultencoding("utf-8")
 
 class TestResource(resource.Resource):
     isLeaf = True#key important.Delete it will cause ERROR
